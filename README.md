@@ -1,5 +1,10 @@
 # CoachMarks
 
+Demo
+  ---
+
+!([(https://github.com/megaganjotsingh/CoachMarks/blob/main/coachMarks.gif)])_
+
 Easy to Use
   ---
   

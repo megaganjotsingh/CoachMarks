@@ -1,10 +1,3 @@
-//
-//  CoachMark.swift
-//  CoachMarksExample
-//
-//  Created by Admin on 17/01/23.
-//  Copyright © 2023 Darin Doria. All rights reserved.
-//
 
 import Foundation
 import UIKit

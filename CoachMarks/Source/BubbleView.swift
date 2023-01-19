@@ -100,7 +100,7 @@ class BubbleView: UIView {
         //  Wide Arrow --> x = center + - ArrowSize
         //  Skinny Arrow --> x = center + - center
         //  Normal Arrow -->
-        let start = CGPoint(x: center, y: bounds.height)
+        let start = CGPoint(x: center, y: bounds.height-16)
         let end = CGPoint(x: center, y: 0)
 
         let path = UIBezierPath()

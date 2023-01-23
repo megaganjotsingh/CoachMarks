@@ -290,3 +290,39 @@ extension CoachMarksView: CAAnimationDelegate {
         delegate?.coachMarksView(self, didNavigateTo: markIndex)
     }
 }
+
+extension UIView {
+    var extendedFrame: CGRect {
+        var rect = frame
+        rect.origin.y -= 4
+        rect.origin.x -= 6
+        rect.size.width += 12
+        rect.size.height += 8
+        return rect
+    }
+    
+    // this is used when the subview has multiple parent views
+    func getConvertedFrame(fromSubview subview: UIView) -> CGRect {
+        // check if `subview` is a subview of self
+        guard subview.isDescendant(of: self) else {
+            return .zero
+        }
+        
+        var frame = subview.extendedFrame
+        if subview.superview == nil {
+            return frame
+        }
+        
+        var superview = subview.superview
+        while superview != self {
+            frame = superview!.convert(frame, to: superview!.superview)
+            if superview!.superview == nil {
+                break
+            } else {
+                superview = superview!.superview
+            }
+        }
+        
+        return superview!.convert(frame, to: self)
+    }
+}

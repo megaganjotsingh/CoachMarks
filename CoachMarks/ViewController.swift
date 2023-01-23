@@ -35,7 +35,7 @@ class ViewController: UIViewController {
                 shape: .roundedRect(cornerRadius: 10)
             ),
             CoachMark(
-                rect: btn2.extendedFrame,
+                rect: view.getConvertedFrame(fromSubview: btn2),
                 caption: "Tap name for patient notes & all task details",
                 shape: .square
             ),
@@ -55,16 +55,5 @@ class ViewController: UIViewController {
       
         self.view.addSubview(coachMarksView)
         coachMarksView.start()
-    }
-}
-
-extension UIView {
-    var extendedFrame: CGRect {
-        var rect = frame
-        rect.origin.y -= 4
-        rect.origin.x -= 6
-        rect.size.width += 12
-        rect.size.height += 8
-        return rect
     }
 }
